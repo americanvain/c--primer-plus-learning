@@ -4,6 +4,7 @@
 int main(int argc, char const *argv[])
 {
     long num_sec;
+    std::cout<<"THIS LINE IS USED TO TEST";
     std::cout<< "Enter the number of seconds:  ";
     std::cin >> num_sec;
 
