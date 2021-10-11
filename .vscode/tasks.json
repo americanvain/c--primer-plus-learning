@@ -25,6 +25,7 @@
                 "kind": "build",
                 "isDefault": true
             },
+
             "dependsOn": "创建bin文件夹",
             "detail": "调试器生成的任务。"
         }
