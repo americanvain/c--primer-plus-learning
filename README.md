@@ -1,4 +1,4 @@
 # c--primer-plus-learning
 
 
-This repositaay will record the process of my learning of c++ primer plus!!
+This repository will record the process of my learning of c++ primer plus!!
