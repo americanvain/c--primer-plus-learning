@@ -9,7 +9,7 @@ struct CandyBar
     int calo;
 };
 CandyBar& chushihua(CandyBar &,const char*,const double,const int);
-void show(CandyBar &showcandy);
+void show(const CandyBar &showcandy);
 int main(int argc, char const *argv[])
 {
     CandyBar haha;
@@ -24,7 +24,7 @@ CandyBar& chushihua(CandyBar &candy,char const *name,const double w,const int c)
     candy.calo=c;
     return candy;
 }
-void show(CandyBar &showcandy)
+void show(const CandyBar &showcandy)
 {
     cout<<showcandy.brand<<endl;
     cout<<showcandy.weight<<endl;

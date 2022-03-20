@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "options": {
+         "cwd": "${fileDirname}"
+    },
+    "tasks": [
+        //如果没有bin文件夹，cmakelists里会自动创建，所以这个task不需要
+        {
+            "type":"shell",
+            "label":"创建bin文件夹",
+            "command":" if [ ! -e ${fileDirname}/bin  ];then mkdir -p ${fileDirname}/bin;fi"
+        },
+        {
+            "type": "shell",
+            "label": "创建build文件夹",
+            "command":"if [ ! -e ${fileDirname}/build ];then mkdir -p ${fileDirname}/build;fi"
+        },
+        {
+            "type": "shell",
+            "label": "make",
+            "command": "make",
+            "args": [
+
+            ],
+            "options": {
+                "cwd": "${fileDirname}/build"
+            }
+        },
+        {
+            "label": "cmake",
+            "type":"shell",
+            "command":"cmake",
+            "args": [
+                ".."
+            ],
+            "options": {
+                "cwd": "${fileDirname}/build"
+            },
+            "dependsOn":[
+                "创建build文件夹",
+            ]
+        },
+        {
+            "label": "mytasks",
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "cmake",
+                "make"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "echoxinxi",
+            "type": "shell",
+            "command":"echo ${relativeFileDirname}",
+            // "command":"echo ${fileBasenameNoExtension},${relativeFile} ,${fileBasename},${fileExtname},${cwd}  ",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

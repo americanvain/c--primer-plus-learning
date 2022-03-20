@@ -2,7 +2,7 @@
 using namespace std;
 
 template <typename T>
-T max5(T bijiao[5]);
+T max5(T* bijiao);
 
 
 int main(int argc, char const *argv[])
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 }
 
 template <typename T>
-T max5(T bijiao[5])
+T max5(T* bijiao)
 {
     T temp=bijiao[0];
     for(int i=1;i<5;i++)
@@ -28,3 +28,4 @@ T max5(T bijiao[5])
     }
     return temp;
 }
+
